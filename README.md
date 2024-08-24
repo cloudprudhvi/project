@@ -178,4 +178,59 @@ else
   echo "The number is exactly 10."
 fi
 ```
+### Loops in Shell Scripting
 
+Loops allow you to execute a set of commands repeatedly under certain conditions. This can be extremely useful for automating repetitive tasks.
+
+#### **For Loop**
+
+The `for` loop iterates over a list of items and performs commands for each item in the list.
+
+```bash
+# Syntax of a for loop
+for item in list
+do
+  # Commands to execute for each item
+done
+```
+### Example Usage of For Loop
+This example shows a `for` loop that prints each item in a list.
+
+```bash
+#!/bin/bash
+# List of names
+names="chiranjeevi balakrishna Nagarjuna Venkatesh"
+
+# For loop that prints each name in the list
+for name in $names
+do
+  echo "Hello, $name!"
+done
+```
+### While Loop
+The `while` loop continues to execute a set of commands as long as the given condition is true.
+
+```bash
+# Syntax of a while loop
+while [ condition ]
+do
+  # Commands to execute as long as condition is true
+done
+```
+### Example Usage of While Loop
+This example demonstrates a `while` loop that asks the user for input until they enter "stop".
+
+```bash
+#!/bin/bash
+# Initialize variable
+echo "Enter Input only stop is allowed"
+read input
+
+# While loop that runs until the user enters "stop"
+while [[ $input != "stop" ]]
+do
+  echo "Enter 'stop' to quit:"
+  read input
+  echo "You entered: $input"
+done
+```
