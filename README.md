@@ -51,3 +51,131 @@
     read name
     echo "Hi, $name!"
     ```
+### Understanding Variables and Command-Line Arguments in Shell Scripts
+
+---
+
+### **Variables in Shell Scripts**
+
+#### **What are Variables?**
+- **Definition**: Variables in shell scripting store data that can be used and manipulated within the script. They are placeholders or references that can hold different values throughout the execution of the script.
+- **Declaring Variables**: Variables in shell scripts do not need to be declared with any type. A variable is created the moment you assign a value to it.
+- **Syntax**:
+  ```bash
+  # Assigning a value to a variable
+  name="Prudhvi"
+  echo $name
+  ```
+### Variable Types
+
+- **Local Variables**: Defined within a script and accessible only within that shell session.
+- **Environmental Variables**: Defined for the current shell and inherited by any child shells or processes. Common examples include PATH, HOME, and USER.
+- **Positional Parameters**: Special variables that store command-line arguments to a script. $1, $2, etc., represent each argument.
+
+### Best Practices for Using Variables
+
+- **Quotes in Variables**: Always use quotes around variables to handle spaces and special characters in the value.
+  ```bash
+  # Correct Usage
+  echo "User name: $name"
+  ```
+### Using Command-Line Arguments with Variables
+
+#### What are Command-Line Arguments?
+- **Definition**: Command-line arguments are inputs provided to the script at the time of execution, which allow users to pass additional data to the script without hardcoding values.
+
+#### Accessing Command-Line Arguments via Variables
+- **Positional Variables**: $0 (script name), $1, $2, etc., represent the arguments in the order they are passed.
+- **Counting Arguments**: $# gives the number of command-line arguments passed.
+- **All Arguments**: $* or $@ is used to reference all arguments passed to the script.
+
+#### Example Usage
+- **Script Using Variables and Command-Line Arguments**:
+  ```bash
+  #!/bin/bash
+  # This script echoes the first two command-line arguments and a variable
+  user_defined="Myvalue"
+  echo "First argument: $1"
+  echo "Second argument: $2"
+  echo "User defined variable: $user_defined"
+  ```
+### Handling User Input
+
+- **Reading Input During Execution**: Besides using command-line arguments, scripts can prompt the user during execution using the `read` command, storing the input in a variable:
+  ```bash
+  echo "Enter your name:"
+  read user_name
+  echo "Hello, $user_name!"
+  ```
+
+### Conditional Statements in Shell Scripting
+
+Conditional statements allow you to make decisions in your scripts based on conditions. They are essential for making scripts dynamic and responsive to different situations.
+
+#### **If Statement**
+The `if` statement performs a command and checks its exit status. If the exit status is `0` (true), the commands inside the `if` block are executed.
+
+```bash
+# Syntax of if statement
+if [ condition ]
+then
+  # Commands to execute if the condition is true
+fi
+```
+### Else Statement
+
+The `else` statement is used to execute commands when the `if` condition is false.
+
+#### Syntax
+
+```bash
+# Syntax of if-else statement
+if [ condition ]
+then
+  # Commands if the condition is true
+else
+  # Commands if the condition is false
+fi
+```
+
+### Elif Statement
+
+The `elif` (else if) statement is used to specify a new condition to test if the first condition is false.
+
+#### Syntax
+
+```bash
+# Syntax of if-elif-else statement
+if [ condition1 ]
+then
+  # Commands if condition1 is true
+elif [ condition2 ]
+then
+  # Commands if condition2 is true
+else
+  # Commands if both conditions are false
+fi
+```
+
+#### **Script Example with Numeric Comparison**
+
+This script prompts the user for a number and checks if it is greater than, less than, or equal to 10.
+
+```bash
+#!/bin/bash
+# Prompt user for a number
+echo "Please enter a number:"
+read number
+
+# Numeric comparison
+if [[ $number -gt 10 ]]
+then
+  echo "The number $number is greater than 10."
+elif [[ $number -lt 10 ]]
+then
+  echo "The number $number is less than 10."
+else
+  echo "The number is exactly 10."
+fi
+```
+
