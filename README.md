@@ -22,32 +22,32 @@
    - Use a text editor like `nano` or `vim` to create a new file and write your script. Start with the shebang line, followed by commands. For example:
      ```bash
      #!/bin/bash
-     echo "Hi, mom!"
+     echo "Hi, Mom!"
      ```
 
 - **Making the Script Executable**
    - Modify the script's permissions to make it executable with `chmod`:
      ```bash
-     chmod +x myscript.sh
+     chmod +x script.sh
      ```
    - Run the script by its path:
      ```bash
-     ./myscript.sh
+     ./script.sh
      ```
 
 #### **Shell Script Structure and Syntax**
 - **Basic Syntax Elements**
   - **Comments**: Begin with `#`, useful for adding descriptions and notes, except for the shebang.
   - **Echo Command**: Displays text or variable values.
-  - **Reading Input**: Employ `read` to capture input from users.
 
-- **Example Script**: 
-  - A simple script that interacts with the user:
+#### **Using the Read Command**
+- **Purpose**: The `read` command is used in shell scripts to capture input from the user.
+- **Usage**: You can prompt the user for input, which is then stored in a variable for further use within the script.
+- **Example**:
+  - This script asks for the user's name and then greets them:
     ```bash
     #!/bin/bash
     echo "What is your name?"
     read name
     echo "Hi, $name!"
     ```
-
----
