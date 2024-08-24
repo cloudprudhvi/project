@@ -18,18 +18,14 @@
 ### **2: Creating Your First Shell Script**
 
 #### **Writing and Executing a Script**
-1. **Creating a Script File**
-   - Use a text editor like `nano` or `vim` to write the script.
-   - Begin with the shebang line to specify the interpreter:
+- **Creating a Script File**
+   - Use a text editor like `nano` or `vim` to create a new file and write your script. Start with the shebang line, followed by commands. For example:
      ```bash
      #!/bin/bash
-     ```
-   - Below the shebang, add commands, for example:
-     ```bash
-     echo "Hello, World!"
+     echo "Hi, mom!"
      ```
 
-2. **Making the Script Executable**
+- **Making the Script Executable**
    - Modify the script's permissions to make it executable with `chmod`:
      ```bash
      chmod +x myscript.sh
@@ -46,12 +42,12 @@
   - **Reading Input**: Employ `read` to capture input from users.
 
 - **Example Script**: 
-  - Combine `read`, `echo`, and variables to interact with the user:
+  - A simple script that interacts with the user:
     ```bash
     #!/bin/bash
     echo "What is your name?"
     read name
-    echo "Hello, $name!"
+    echo "Hi, $name!"
     ```
 
 ---
